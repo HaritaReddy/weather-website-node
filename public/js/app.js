@@ -28,7 +28,7 @@ weatherForm.addEventListener('submit', (e) => {
   document.getElementsByClassName('Weather')[1].innerText=''
   document.getElementsByClassName('Weather')[2].innerText=''
   const location=search.value
-  fetch('http://localhost:3000/weather?search='+location)
+  fetch('/weather?search='+location)
   .then((response) => {
      return response.json()
   })
