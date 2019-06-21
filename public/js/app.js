@@ -27,6 +27,7 @@ weatherForm.addEventListener('submit', (e) => {
   document.getElementsByClassName('Weather')[0].innerText=''
   document.getElementsByClassName('Weather')[1].innerText=''
   document.getElementsByClassName('Weather')[2].innerText=''
+  document.getElementsByClassName('Weather')[3].innerText=''
   const location=search.value
   fetch('/weather?search='+location)
   .then((response) => {
@@ -42,6 +43,8 @@ weatherForm.addEventListener('submit', (e) => {
       document.getElementsByClassName('Weather')[0].innerText=r.Location
       document.getElementsByClassName('Weather')[1].innerText=r.Timezone
       document.getElementsByClassName('Weather')[2].innerText=r.Summary
+      document.getElementsByClassName('Weather')[3].innerText='The temperature is '+r.Temperature+' degrees celsius.'
+      
     }
   })
   console.log(location)
